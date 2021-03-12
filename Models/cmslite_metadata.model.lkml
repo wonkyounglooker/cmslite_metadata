@@ -1,5 +1,6 @@
 # The connection will be defined in the destination project
-connection: "redshift_pacific_time"
+# connection: "redshift_pacific_time"
+connection: "thelook"
 
 # include all the views
 include: "/Views/**/*.view"

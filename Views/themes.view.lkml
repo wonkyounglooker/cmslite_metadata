@@ -13,31 +13,36 @@ view: themes {
     primary_key: yes
     description: "The alphanumeric CMS Lite subtheme identifier."
     type: string
-    sql:COALESCE(${TABLE}.subtheme_id,'') ;;
+    # sql:COALESCE(${TABLE}.subtheme_id,'') ;;
+    sql: ${TABLE}.value  ;; #Won
   }
 
   dimension: hr_url {
     type: string
-    sql: ${TABLE}.hr_url ;;
+    # sql: ${TABLE}.hr_url ;;
+    sql: ${TABLE}.value  ;; #Won
   }
 
   dimension: node_id {
     description: "The alphanumeric CMS Lite node identifier."
     type: string
-    sql: ${TABLE}.node_id ;;
+    # sql: ${TABLE}.node_id ;;
+    sql: ${TABLE}.value  ;; #Won
   }
 
   dimension: parent_node_id {
     description: "The alphanumeric CMS Lite node identifier of the parent node."
     type: string
-    sql: ${TABLE}.parent_node_id ;;
+    # sql: ${TABLE}.parent_node_id ;;
+    sql: ${TABLE}.value  ;; #Won
   }
 
   dimension: subtheme {
     description: "The CMS Lite subtheme."
     type: string
     drill_fields: [topic]
-    sql: COALESCE(${TABLE}.subtheme, '(no subtheme)') ;;
+    # sql: COALESCE(${TABLE}.subtheme, '(no subtheme)') ;;
+    sql: ${TABLE}.value  ;; #Won
     suggest_explore: themes_cache
     suggest_dimension: themes_cache.subtheme
   }
@@ -46,7 +51,8 @@ view: themes {
     description: "The CMS Lite theme."
     type: string
     drill_fields: [subtheme, topic]
-    sql: COALESCE(${TABLE}.theme, '(no theme)') ;;
+    # sql: COALESCE(${TABLE}.theme, '(no theme)') ;;
+    sql: ${TABLE}.value  ;; #Won
     suggest_explore: themes_cache
     suggest_dimension: themes_cache.theme
   }
@@ -54,24 +60,28 @@ view: themes {
   dimension: theme_id {
     description: "The alphanumeric CMS Lite theme identifer."
     type: string
-    sql: COALESCE(${TABLE}.theme_id,'') ;;
+    # sql: COALESCE(${TABLE}.theme_id,'') ;;
+    sql: ${TABLE}.value  ;; #Won
   }
 
   dimension: title {
     description: "The CMS Lite page title."
     type: string
-    sql: ${TABLE}.title ;;
+    # sql: ${TABLE}.title ;;
+    sql: ${TABLE}.value  ;; #Won
   }
 
   dimension: parent_title {
     type: string
-    sql: ${TABLE}.parent_title ;;
+    # sql: ${TABLE}.parent_title ;;
+    sql: ${TABLE}.value  ;; #Won
   }
 
   dimension: topic {
     description: "The CMS Lite topic."
     type: string
-    sql: COALESCE(${TABLE}.topic, '(no topic)') ;;
+    # sql: COALESCE(${TABLE}.topic, '(no topic)') ;;
+    sql: ${TABLE}.value  ;; #Won
     suggest_explore: themes_cache
     suggest_dimension: themes_cache.topic
   }
@@ -79,13 +89,15 @@ view: themes {
   dimension: topic_id {
     description: "The alphanumeric CMS Lite topic identifier."
     type: string
-    sql: COALESCE(${TABLE}.topic_id,'') ;;
+    # sql: COALESCE(${TABLE}.topic_id,'') ;;
+    sql: ${TABLE}.value  ;; #Won
   }
 
   dimension: subtopic {
     description: "The CMS Lite subtopic."
     type: string
-    sql: COALESCE(${TABLE}.subtopic, '(no subtopic)') ;;
+    # sql: COALESCE(${TABLE}.subtopic, '(no subtopic)') ;;
+    sql: ${TABLE}.value  ;; #Won
     suggest_explore: themes_cache
     suggest_dimension: themes_cache.subtopic
   }
@@ -93,13 +105,15 @@ view: themes {
   dimension: subtopic_id {
     description: "The alphanumeric CMS Lite subtopic identifier."
     type: string
-    sql: COALESCE(${TABLE}.subtopic_id,'') ;;
+    # sql: COALESCE(${TABLE}.subtopic_id,'') ;;
+    sql: ${TABLE}.value  ;; #Won
   }
 
   dimension: subsubtopic {
     description: "The CMS Lite subsubtopic."
     type: string
-    sql: COALESCE(${TABLE}.subsubtopic, '(no subsubtopic)') ;;
+    # sql: COALESCE(${TABLE}.subsubtopic, '(no subsubtopic)') ;;
+    sql: ${TABLE}.value  ;; #Won
     suggest_explore: themes_cache
     suggest_dimension: themes_cache.subsubtopic
   }
@@ -107,7 +121,8 @@ view: themes {
   dimension: subsubtopic_id {
     description: "The alphanumeric CMS Lite subsubtopic identifier."
     type: string
-    sql: COALESCE(${TABLE}.subsubtopic_id,'') ;;
+    # sql: COALESCE(${TABLE}.subsubtopic_id,'') ;;
+    sql: ${TABLE}.value  ;; #Won
   }
 
   measure: count {
